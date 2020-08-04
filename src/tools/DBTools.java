@@ -11,7 +11,7 @@ import java.util.List;
 public class DBTools {
 
 	private static Connection conn = null;
-	private static final String URL = "jdbc:mysql://localhost:3306/java2005?useUnicode=true&characterEncoding=utf8";
+	private static final String URL = "jdbc:mysql://localhost:3306/mobilemanager?useUnicode=true&characterEncoding=utf8";
 	private static final String USER = "root";
 	private static final String PASSWORD = "rootroot";
 	private static PreparedStatement pstat = null;

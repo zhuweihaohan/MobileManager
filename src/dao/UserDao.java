@@ -28,18 +28,22 @@ public class UserDao implements BaseDao<User>{
 	@Override
 	public User selectById(User t) {
 		User user = null;
-		String sql = "select * from user1 where username=?";
+		String sql = "select * from tuser where user_id=?";
 		
-		List<Object[]> objs = DBTools.executeQuery(sql, t.getUsername());
+		List<Object[]> objs = DBTools.executeQuery(sql, t.getUserId());
+		
+		
+		
 		if(objs.size()>0){
-			user = new User();
+			
 			Object[] obj = objs.get(0);
-			String username = (String)obj[0];
-			String password = (String)obj[1];
-			String isadmin = (String)obj[2];
-			user.setUsername(username);
-			user.setPassword(password);
-			user.setIsadmin(isadmin);
+			int userId = Integer.parseInt((String)obj[0]);
+			int customerId = Integer.parseInt((String)obj[1]);
+			int accountId = Integer.parseInt((String)obj[2]);
+			String mobileNumber=(String )obj[3];
+			String roamingStatus=(String )obj[4];
+			String comLevel=(String )obj[5];
+			user=new User(userId,customerId,accountId,mobileNumber,roamingStatus,comLevel);
 			
 		}
 		
