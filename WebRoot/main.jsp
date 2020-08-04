@@ -1,5 +1,15 @@
+<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%
+String path = request.getContextPath();
+String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+%>
 
-<HTML><HEAD><TITLE>ÖĞ¹úÒÆ¶¯ÒµÎñ¹ÜÀíÏµÍ³</TITLE>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<HTML>
+
+<HEAD><TITLE>ä¸­å›½ç§»åŠ¨ä¸šåŠ¡ç®¡ç†ç³»ç»Ÿ</TITLE>
 <META http-equiv=Content-Type content="text/html; charset=gb2312">
 <META content="MSHTML 6.00.2600.0" name=GENERATOR>
 <link href="style.css" rel="stylesheet" type="text/css">
@@ -32,13 +42,17 @@
     <TD width=173 bgColor=#c9d3e9 rowSpan=2>
       <TABLE cellSpacing=0 cellPadding=0 width=173 border=0>
         <TBODY>
+       <c:if test="${operator.getIdAdmin()=='Y'}">
+      
         <TR>
           <TD width=11 height="29" bgColor=#2650a6><IMG height=1 
             src="images/blank.gif" width=1 border=0><img src="images/Arrow1.gif" width="23" height="23"></TD>
           <TD width=165 height="29" bgColor=#7691c7>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<A 
             class=nav 
-            href="newOperator.htm">ĞÂÔö²Ù×÷Ô±</A></TD>
+            href="newOperator.htm">æ–°å¢æ“ä½œå‘˜</A></TD>
         </TR>
+        </c:if>
+        <c:if test="${operator.getIdAdmin()=='Y'}">
         <TR>
           <TD bgColor=#ffffff colSpan=2><IMG height=1 
             src="images/blank.gif" width=1 border=0></TD></TR>
@@ -47,15 +61,13 @@
             src="images/blank.gif" width=1 border=0><img src="images/Arrow1.gif" width="23" height="23"></TD>
           <TD width=165 height="29" bgColor=#7691c7>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<A 
             class=nav 
-            href="modifyOperator.htm">ĞŞ¸Ä²Ù×÷Ô±</A></TD>
+            href="modifyOperator.htm">ä¿®æ”¹æ“ä½œå‘˜</A></TD>
         </>
         <TR>
           <TD bgColor=#ffffff colSpan=2><IMG height=1 
             src="images/blank.gif" width=1 border=0></TD>
-        </TR>
-        <TR>
-        
-        </TR>
+        </TR></c:if>
+         <c:if test="${operator.getIdAdmin()=='Y'}">
         <TR>
           <TD bgColor=#ffffff colSpan=2><IMG height=1 
             src="images/blank.gif" width=1 border=0></TD></TR>
@@ -63,7 +75,30 @@
           <TD width=11 bgColor=#2650a6><IMG height=1 
             src="images/blank.gif" width=1 border=0><img src="images/Arrow1.gif" width="23" height="23"></TD>
           <TD width=165 height="29" bgColor=#7691c7>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<A 
-            class=nav href="resource.htm">×ÊÔ´¹ÜÀí</A></TD>
+            class=nav href="resource.htm">èµ„æºç®¡ç†</A></TD>
+        </TR>
+        </c:if>
+         <c:if test="${operator.getIdAdmin()=='Y'}">
+        <TR>
+          <TD bgColor=#ffffff colSpan=2><IMG height=1 
+            src="images/blank.gif" width=1 border=0></TD></TR>
+        <TR>
+          <TD width=11 bgColor=#2650a6><IMG height=1 
+            src="images/blank.gif" width=1 border=0><img src="images/Arrow1.gif" width="23" height="23"></TD>
+          <TD width=165 height="29" bgColor=#7691c7>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<A 
+            class=nav 
+            href="#">é…ç½®ä¸šåŠ¡è´¹ç”¨</A></TD>
+        </TR>
+        </c:if>
+        <TR>
+          <TD bgColor=#ffffff colSpan=2><IMG height=1 
+            src="images/blank.gif" width=1 border=0></TD></TR>
+        <TR>
+          <TD width=11 bgColor=#2650a6><IMG height=1 
+            src="images/blank.gif" width=1 border=0><img src="images/Arrow1.gif" width="23" height="23"></TD>
+          <TD width=165 height="29" bgColor=#7691c7>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<A 
+            class=nav 
+            href="newCustomer.htm">å¼€æˆ·</A></TD>
         </TR>
         <TR>
           <TD bgColor=#ffffff colSpan=2><IMG height=1 
@@ -73,7 +108,7 @@
             src="images/blank.gif" width=1 border=0><img src="images/Arrow1.gif" width="23" height="23"></TD>
           <TD width=165 height="29" bgColor=#7691c7>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<A 
             class=nav 
-            href="#">ÅäÖÃÒµÎñ·ÑÓÃ</A></TD>
+            href="newUser.htm">å½•å…¥ç”¨æˆ·ä¿¡æ¯</A></TD>
         </TR>
         <TR>
           <TD bgColor=#ffffff colSpan=2><IMG height=1 
@@ -83,37 +118,7 @@
             src="images/blank.gif" width=1 border=0><img src="images/Arrow1.gif" width="23" height="23"></TD>
           <TD width=165 height="29" bgColor=#7691c7>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<A 
             class=nav 
-            href="#"></A></TD-->
-        </TR>
-        <TR>
-          <TD bgColor=#ffffff colSpan=2><IMG height=1 
-            src="images/blank.gif" width=1 border=0></TD></TR>
-        <TR>
-          <TD width=11 bgColor=#2650a6><IMG height=1 
-            src="images/blank.gif" width=1 border=0><img src="images/Arrow1.gif" width="23" height="23"></TD>
-          <TD width=165 height="29" bgColor=#7691c7>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<A 
-            class=nav 
-            href="newCustomer.htm">¿ª»§</A></TD>
-        </TR>
-        <TR>
-          <TD bgColor=#ffffff colSpan=2><IMG height=1 
-            src="images/blank.gif" width=1 border=0></TD></TR>
-        <TR>
-          <TD width=11 bgColor=#2650a6><IMG height=1 
-            src="images/blank.gif" width=1 border=0><img src="images/Arrow1.gif" width="23" height="23"></TD>
-          <TD width=165 height="29" bgColor=#7691c7>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<A 
-            class=nav 
-            href="newUser.htm">Â¼ÈëÓÃ»§ĞÅÏ¢</A></TD>
-        </TR>
-        <TR>
-          <TD bgColor=#ffffff colSpan=2><IMG height=1 
-            src="images/blank.gif" width=1 border=0></TD></TR>
-        <TR>
-          <TD width=11 bgColor=#2650a6><IMG height=1 
-            src="images/blank.gif" width=1 border=0><img src="images/Arrow1.gif" width="23" height="23"></TD>
-          <TD width=165 height="29" bgColor=#7691c7>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<A 
-            class=nav 
-            href="newAccount.htm">Â¼ÈëÕË»§ĞÅÏ¢</A></TD>
+            href="newAccount.htm">å½•å…¥è´¦æˆ·ä¿¡æ¯</A></TD>
         </>
         
         <TR>
@@ -131,7 +136,7 @@
             src="images/blank.gif" width=1 border=0><img src="images/Arrow1.gif" width="23" height="23"></TD>
           <TD width=165 height="29" bgColor=#7691c7>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<A 
             class=nav 
-            href="Logout.htm">ÍË³ö</A></TD>
+            href="logout.jsp">é€€å‡º</A></TD>
         </TR>
         <TR>
           <TD bgColor=#ffffff colSpan=2><IMG height=1 
@@ -147,7 +152,7 @@
       <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
         <TBODY>
         <TR>
-          <TD height=25>&nbsp;ÄúÏÖÔÚµÄÎ»ÖÃ£ºµÇÂ¼³É¹¦</TD>
+          <TD height=25>&nbsp;æ¬¢è¿ï¼š${operator.getOperatorName()}</TD>
         </TR>
         <TR>
           <TD bgColor=#2650a6><IMG height=1 src="images\blank(1).gif" 

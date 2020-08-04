@@ -53,8 +53,25 @@ public void doPost(HttpServletRequest req, HttpServletResponse resp) throws Serv
 				HttpSession session = req.getSession();
 				session.setAttribute("operatorName", t.getOperatorName());
 				session.setAttribute("isadmin", t.getIdAdmin());
-				
-				   req.getRequestDispatcher("main.htm").forward(req, resp);
+				 String ifj=req.getParameter("ifj");
+				   String time=req.getParameter("time");
+				  String name=req.getParameter("username");
+				  String pass=req.getParameter("password");
+				   if(ifj!=null)
+				   { System.out.println("¼Ç×¡ÃÜÂë");
+					   Cookie c1=new Cookie("username",name); 
+				   Cookie c2=new Cookie("password",pass); 
+				   if(!time.equals("1"))
+				   {int t1=Integer.parseInt(time);
+				   c1.setMaxAge(t1);
+				   c2.setMaxAge(t1);
+				   }
+				   resp.addCookie(c1);
+				   resp.addCookie(c2);
+				   }
+				   
+				req.setAttribute("operator", t);
+				   req.getRequestDispatcher("main.jsp").forward(req, resp);
 				
 				
 			}else{

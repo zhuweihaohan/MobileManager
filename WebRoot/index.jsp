@@ -1,4 +1,6 @@
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+<%@ page import="vo.*" %>
+<%@ page import="dao.*" %>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -6,6 +8,42 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <HTML>
+<%
+  		request.setCharacterEncoding("UTF-8");
+  		response.setCharacterEncoding("UTF-8");
+  		//获取request中的属性
+  		String error = (String)request.getAttribute("error");
+  		if(error==null){
+  			error="";
+  		}
+  		Cookie[] cookies=request.getCookies();
+    String username1="";
+    String lpass="";
+    if(cookies!=null)
+    {
+    for(Cookie c:cookies)
+    {
+    
+    if(c.getName().equals("username")) 
+    {username1=c.getValue();}
+    else if(c.getName().equals("password"))
+     { lpass=c.getValue();}
+    
+    }
+if(!username1.equals("")&&!lpass.equals(""))
+{ OperatorDao dao = new OperatorDao();
+		toperator t=new toperator();
+		t.setOperatorId(username1);
+		t = (toperator) dao.selectById(t);
+t=dao.selectById(t);
+if(t!=null&&lpass.equals(t.getOperatorPwd()));
+session.setAttribute("username",t.getOperatorName());
+session.setAttribute("isadmin",t.getIdAdmin());
+request.setAttribute("operator", t);
+request.getRequestDispatcher("main.jsp").forward(request, response);
+}
+    }
+  	 %>
 <HEAD>
 <TITLE>中国移动业务管理系统</TITLE>
 <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=gb2312">
@@ -57,8 +95,19 @@ body {
                         <INPUT class=f2 type=submit size=4 value=进入系统 name=Submit>
                       </div></td>
                   </tr>
+                 
+                
                 </table>
+                   记住密码：<input type="checkbox" name="ifj" id="ifj"/>
+   <select name="time" id="time">
+    <option value="1">不限时</option>
+   <option value="10">10秒</option>
+    <option value="30">30秒</option>
+     <option value="60">1分</option>
+      <option value="600">10分</option></select>
                 </div>
+                
+  
             </form></td>
           </tr>
         </table></TD>

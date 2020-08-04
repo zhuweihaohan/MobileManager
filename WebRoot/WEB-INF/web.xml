@@ -27,15 +27,15 @@
     <servlet-name>checkservlet</servlet-name>
     <url-pattern>/check</url-pattern>
   </servlet-mapping>
-<!-- <filter>
+ <filter>
 <filter-name>login</filter-name>
 <filter-class>filter.LoginFitler</filter-class>
 </filter>
 <filter-mapping>
 <filter-name>login</filter-name>
-<url-pattern>/welcome.jsp</url-pattern>
+<url-pattern>/main.jsp</url-pattern>
 </filter-mapping>
- -->
+
   
 
 
