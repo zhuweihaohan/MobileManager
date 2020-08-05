@@ -16,7 +16,7 @@
   <TR vAlign=top>
     <TD height="600" bgColor=#f1f3f9>
     
-     操作成功！
+     ${finish}
 
     
     </TD>

@@ -31,6 +31,7 @@ op.setOperatorName(operatorName);
 op.setOperatorPwd(operatorPwd);
 OperatorDao dao=new OperatorDao();
 dao.insert(op);
+request.setAttribute("finish", "添加操作员完成");
 request.getRequestDispatcher("finish.jsp").forward(request, response);
 	}
 

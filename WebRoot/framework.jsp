@@ -65,7 +65,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
             src="images/blank.gif" width=1 border=0><img src="images/Arrow1.gif" width="23" height="23"></TD>
           <TD width=165 height="29" bgColor=#7691c7>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<A 
             class=nav 
-            href="updateOperator.jsp">修改操作员</A></TD>
+            href="updateOperator">修改操作员</A></TD>
         </>
         <TR>
           <TD bgColor=#ffffff colSpan=2><IMG height=1 

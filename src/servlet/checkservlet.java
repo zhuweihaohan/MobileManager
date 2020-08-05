@@ -63,7 +63,7 @@ public void doPost(HttpServletRequest req, HttpServletResponse resp) throws Serv
 				  String name=req.getParameter("username");
 				  String pass=req.getParameter("password");
 				   if(ifj!=null)
-				   { System.out.println("¼Ç×¡ÃÜÂë");
+				   { 
 					   Cookie c1=new Cookie("username",name); 
 				   Cookie c2=new Cookie("password",pass); 
 				   if(!time.equals("1"))

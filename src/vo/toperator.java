@@ -5,6 +5,13 @@ private String operatorId;
 private String operatorName;
 private String operatorPwd;
 private String idAdmin;
+public toperator(){}
+public toperator(String operatorId,String operatorName,String operatorPwd,String idAdmin){
+	this.setIdAdmin(idAdmin);
+	this.setOperatorId(operatorId);
+	this.setOperatorName(operatorName);
+	this.setOperatorPwd(operatorPwd);
+}
 public String getOperatorId() {
 	return operatorId;
 }

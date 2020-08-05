@@ -1,9 +1,10 @@
 package dao;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import tools.DBTools;
-import vo.User;
+import vo.Mobile;
 import vo.toperator;
 
 public class OperatorDao {
@@ -44,8 +45,60 @@ public class OperatorDao {
 		
 	}
 
+	public List<toperator> selectAll() {
+List<toperator> ops = null;
+		
+		String sql = "select * from toperator";
+		List<Object[]> objs = DBTools.executeQuery(sql, null);
+		if(objs.size()>0){
+			ops  = new ArrayList<toperator>();
+			for(int i=0;i<objs.size();i++){
+				Object[] obj = objs.get(i);
+				String id = (String)obj[0];
+				String name = (String)obj[1];
+				String pwd = (String)obj[2];
+				String isadmin=(String)obj[3];
+				toperator t= new toperator(id, name, pwd, isadmin);
+				ops.add(t);
+			}
+		}
+		return ops;
+		
+	}
+
+	public void update(toperator t) {
+		String sql="update toperator set operator_name=?,operator_pwd=?,is_admin=? "
+				+ "where operator_id=?";
+		DBTools.execute(sql, t.getOperatorName(),t.getOperatorPwd(),t.getIdAdmin(),t.getOperatorId());
+	}
+
+	public void createMobile(String mobileNumber1, String mobileNumber2, String mobileType) {
+		long num1=Long.parseLong(mobileNumber1);
+		long num2=Long.parseLong(mobileNumber2);
+		for(long i=num1;i<=num2;i++)
+		{
+			String sql="insert into tmobiles(mobile_number,mobile_type,card_number,is_available) "
+					+ "value(?,?,?,?)";
+			DBTools.execute(sql,i,mobileType,i,"N");
+		}
+	}
+
+	public boolean selectMobileByNum(String num) {
+		String sql="select * from tmobiles where mobile_number=?";
+ List<Object[]> objs = DBTools.executeQuery(sql, num);
+		
+		
+		
+		if(objs.size()>0){
+		return true;	
+			
+		}
+		else{
+			return false;
+	}
 
 
+	}
 	
 
 }

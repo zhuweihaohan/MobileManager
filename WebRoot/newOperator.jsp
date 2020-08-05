@@ -37,6 +37,7 @@ if(namef==1&&passf1==1&&passf2==1)
 
 )
 t4.blur(function(){
+if(passf1==1){
 var pass_1=t3.val();
 var pass_2=t4.val();
 if(pass_1==pass_2){
@@ -48,7 +49,7 @@ else{
 $("#sp3").empty(); 
 $("#sp3").append("<font color='red'>不一致</font>");
 }
-
+}
 if(namef==1&&passf1==1&&passf2==1)
 {
 $("#tijiao").attr("disabled", false);}
