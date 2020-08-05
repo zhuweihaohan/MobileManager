@@ -1,48 +1,41 @@
-<HTML><HEAD><TITLE>ÖĞ¹úÒÆ¶¯ÒµÎñ¹ÜÀíÏµÍ³</TITLE>
+<%@ page language="java" import="java.util.*" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="rapid" uri="http://www.rapid-framework.org.cn/rapid" %>
+<%
+String path = request.getContextPath();
+String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+%>
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<HTML>
+
+<HEAD><TITLE>ä¸­å›½ç§»åŠ¨ä¸šåŠ¡ç®¡ç†ç³»ç»Ÿ</TITLE>
 <META http-equiv=Content-Type content="text/html; charset=gb2312">
 <META content="MSHTML 6.00.2600.0" name=GENERATOR>
 <link href="style.css" rel="stylesheet" type="text/css">
+<!-- ç•™ç»™åˆ«çš„é¡µé¢å»è¦†ç›–,è®©å…¶ä»–é¡µé¢èƒ½å¼•å…¥è‡ªå·²çš„cssæˆ–js -->
+				<rapid:block name="frame-header-style"></rapid:block>
+				<rapid:block name="frame-header-script"></rapid:block>
 </HEAD>
 <BODY bgColor=#ffffff leftMargin=0 topMargin=0 marginheight="0" marginwidth="0">
 <CENTER>
 <TABLE cellSpacing=0 cellPadding=0 width=749 border=0>
   <TBODY>
+  
   <TR>
     <TD width=173><A href="http://www.chinamobile.com/index.asp"><IMG 
       height=74 src="images/logo.gif" width=173 border=0></A></TD>
     <TD vAlign=top align=right>
-      <TABLE width="100%" border=0 cellPadding=0 cellSpacing=0>
-        <TBODY>
-        <TR bgColor=#2650a6>
-          <TD height="12"><img src="images/spacer.gif" width="1" height="1"></TD>
-          <TD height="12"><img src="images/spacer.gif" width="1" height="1"></TD>
-          <TD height="12"><img src="images/spacer.gif" width="1" height="1"></TD>
-          <TD height="12"><img src="images/spacer.gif" width="1" height="1"></TD>
-          <TD height="12"><img src="images/spacer.gif" width="1" height="1"></TD>
-        </TR>
-        <TR bgColor=#FFFFFF>
-          <TD><img src="images/spacer.gif" width="1" height="1"></TD>
-          <TD><img src="images/spacer.gif" width="1" height="1"></TD>
-          <TD><img src="images/spacer.gif" width="1" height="1"></TD>
-          <TD><img src="images/spacer.gif" width="1" height="1"></TD>
-          <TD><img src="images/spacer.gif" width="1" height="1"></TD>
-        </TR>
-        <TR>
-          <TD><img src="images/pic01.gif" width="115" height="55"></TD>
-          <TD><img src="images/pic04.gif" width="115" height="55"></TD>
-          <TD><img src="images/pic03.gif" width="115" height="55"></TD>
-          <TD><img src="images/pic02.gif" width="115" height="55"></TD>
-          <TD><img src="images/pic05.gif" width="115" height="55"></TD>
-        </TR></TBODY></TABLE></TD></TR>
+      </TD></TR>
+        
+        
   <TR>
     <TD height="12" colSpan=2 align=right bgColor=#d4dced>
      
 
       <img src="images/spacer.gif" width="1" height="1">
-      <TABLE cellSpacing=0 cellPadding=0 border=0>
-        <TBODY>
-        <TR>
-          </TR></TBODY></TABLE>
+       
  
     </TD></TR>
   <TR>
@@ -53,13 +46,17 @@
     <TD width=173 bgColor=#c9d3e9 rowSpan=2>
       <TABLE cellSpacing=0 cellPadding=0 width=173 border=0>
         <TBODY>
-        <!--TR>
+       <c:if test="${sessionScope.isadmin=='Y' }">
+      
+        <TR>
           <TD width=11 height="29" bgColor=#2650a6><IMG height=1 
             src="images/blank.gif" width=1 border=0><img src="images/Arrow1.gif" width="23" height="23"></TD>
           <TD width=165 height="29" bgColor=#7691c7>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<A 
             class=nav 
-            href="newOperator.htm">ĞÂÔö²Ù×÷Ô±</A></TD>
+            href="newOperator.jsp">æ–°å¢æ“ä½œå‘˜</A></TD>
         </TR>
+        </c:if>
+        <c:if test="${sessionScope.isadmin=='Y' }">
         <TR>
           <TD bgColor=#ffffff colSpan=2><IMG height=1 
             src="images/blank.gif" width=1 border=0></TD></TR>
@@ -68,23 +65,44 @@
             src="images/blank.gif" width=1 border=0><img src="images/Arrow1.gif" width="23" height="23"></TD>
           <TD width=165 height="29" bgColor=#7691c7>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<A 
             class=nav 
-            href="modifyOperator.htm">ĞŞ¸Ä²Ù×÷Ô±</A></TD>
-        </TR-->
+            href="updateOperator.jsp">ä¿®æ”¹æ“ä½œå‘˜</A></TD>
+        </>
         <TR>
           <TD bgColor=#ffffff colSpan=2><IMG height=1 
             src="images/blank.gif" width=1 border=0></TD>
-        </TR>
-        <TR>
-        
-        </TR>
+        </TR></c:if>
+         <c:if test="${sessionScope.isadmin=='Y' }">
         <TR>
           <TD bgColor=#ffffff colSpan=2><IMG height=1 
-            src="ÖĞ¹úÒÆ¶¯Í¨ĞÅ.files/blank.gif" width=1 border=0></TD></TR>
+            src="images/blank.gif" width=1 border=0></TD></TR>
         <TR>
           <TD width=11 bgColor=#2650a6><IMG height=1 
             src="images/blank.gif" width=1 border=0><img src="images/Arrow1.gif" width="23" height="23"></TD>
           <TD width=165 height="29" bgColor=#7691c7>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<A 
-            class=nav href="resource.htm">×ÊÔ´¹ÜÀí</A></TD>
+            class=nav href="resource.jsp">èµ„æºç®¡ç†</A></TD>
+        </TR>
+        </c:if>
+       <c:if test="${sessionScope.isadmin=='Y' }">
+        <TR>
+          <TD bgColor=#ffffff colSpan=2><IMG height=1 
+            src="images/blank.gif" width=1 border=0></TD></TR>
+        <TR>
+          <TD width=11 bgColor=#2650a6><IMG height=1 
+            src="images/blank.gif" width=1 border=0><img src="images/Arrow1.gif" width="23" height="23"></TD>
+          <TD width=165 height="29" bgColor=#7691c7>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<A 
+            class=nav 
+            href="tt.jsp">é…ç½®ä¸šåŠ¡è´¹ç”¨</A></TD>
+        </TR>
+        </c:if> 
+        <TR>
+          <TD bgColor=#ffffff colSpan=2><IMG height=1 
+            src="images/blank.gif" width=1 border=0></TD></TR>
+        <TR>
+          <TD width=11 bgColor=#2650a6><IMG height=1 
+            src="images/blank.gif" width=1 border=0><img src="images/Arrow1.gif" width="23" height="23"></TD>
+          <TD width=165 height="29" bgColor=#7691c7>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<A 
+            class=nav 
+            href="newCustomer.jsp">å¼€æˆ·</A></TD>
         </TR>
         <TR>
           <TD bgColor=#ffffff colSpan=2><IMG height=1 
@@ -94,65 +112,19 @@
             src="images/blank.gif" width=1 border=0><img src="images/Arrow1.gif" width="23" height="23"></TD>
           <TD width=165 height="29" bgColor=#7691c7>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<A 
             class=nav 
-            href="charge.htm">ÅäÖÃÒµÎñ·ÑÓÃ</A></TD>
+            href="newUser.jsp">å½•å…¥ç”¨æˆ·ä¿¡æ¯</A></TD>
         </TR>
-        <TR>
-          <TD bgColor=#ffffff colSpan=2><IMG height=1 
-            src="images/blank.gif" width=1 border=0></TD></TR>
-        <TR>
-          <!--TD width=11 bgColor=#2650a6><IMG height=1 
-            src="images/blank.gif" width=1 border=0><img src="images/Arrow1.gif" width="23" height="23"></TD>
-          <TD width=165 height="29" bgColor=#7691c7>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<A 
-            class=nav 
-            href="#"></A></TD-->
-        </TR>
-        <TR>
-          <TD bgColor=#ffffff colSpan=2><IMG height=1 
-            src="images/blank.gif" width=1 border=0></TD></TR>
-        <TR>
-          <TD width=11 bgColor=#2650a6><IMG height=1 
-            src="images/blank.gif" width=1 border=0><img src="images/Arrow1.gif" width="23" height="23"></TD>
-          <TD width=165 height="29" bgColor=#7691c7>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<A 
-            class=nav 
-            href="newCustomer.htm">¿ª»§</A></TD>
-        </TR>
-        <TR>
-          <TD bgColor=#ffffff colSpan=2><IMG height=1 
-            src="images/blank.gif" width=1 border=0></TD></TR>
-        <!--TR>
-          <TD width=11 bgColor=#2650a6><IMG height=1 
-            src="images/blank.gif" width=1 border=0><img src="images/Arrow1.gif" width="23" height="23"></TD>
-          <TD width=165 height="29" bgColor=#7691c7>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<A 
-            class=nav 
-            href="newUser.htm">Â¼ÈëÓÃ»§ĞÅÏ¢</A></TD>
-        </TR>
-        <TR>
-          <TD bgColor=#ffffff colSpan=2><IMG height=1 
-            src="images/blank.gif" width=1 border=0></TD></TR>
-        <TR>
-          <TD width=11 bgColor=#2650a6><IMG height=1 
-            src="images/blank.gif" width=1 border=0><img src="images/Arrow1.gif" width="23" height="23"></TD>
-          <TD width=165 height="29" bgColor=#7691c7>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<A 
-            class=nav 
-            href="newAccount.htm">Â¼ÈëÕË»§ĞÅÏ¢</A></TD>
-        </TR-->
+       
         
         <TR>
           <TD bgColor=#ffffff colSpan=2><IMG height=1 
-            src="images/blank.gif" width=1 border=0></TD>
-        </TR>
-        <TR>
-        
-        </TR>
-        <TR>
-          <TD bgColor=#ffffff colSpan=2><IMG height=1 
             src="images/blank.gif" width=1 border=0></TD></TR>
         <TR>
           <TD width=11 bgColor=#2650a6><IMG height=1 
             src="images/blank.gif" width=1 border=0><img src="images/Arrow1.gif" width="23" height="23"></TD>
           <TD width=165 height="29" bgColor=#7691c7>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<A 
             class=nav 
-            href="Logout.htm">ÍË³ö</A></TD>
+            href="logout.jsp">é€€å‡º</A></TD>
         </TR>
         <TR>
           <TD bgColor=#ffffff colSpan=2><IMG height=1 
@@ -165,32 +137,10 @@
         width=1></TD></TR></TBODY></TABLE></TD>
     <TD width=2 rowSpan=3><IMG height=1 src="images\blank(1).gif" width=2></TD>
     <TD width="2">
-      <TABLE cellSpacing=0 cellPadding=0 width="100%" border=0>
-        <TBODY>
-        <TR>
-          <TD height=25>&nbsp;ÄúÏÖÔÚµÄÎ»ÖÃ£ºĞÂÔöÓÃ»§</TD>
-        </TR>
-        <TR>
-          <TD bgColor=#2650a6><IMG height=1 src="images\blank(1).gif" 
-            width=1></TD></TR>
-        <TR>
-          <TD><IMG height=2 src="images\blank(1).gif" width=574></TD></TR></TBODY></TABLE></TD></TR>
-  <TR vAlign=top>
-    <TD height="600" bgColor=#f1f3f9>
-    
-     <form method="POST" action="saveInfo.htm">
-      <p>ÊÖ»úºÅÂë£º<input type="text" name="T1" size="20"></p>
-      <p>ÂşÓÎ×´Ì¬£º<input type="radio" name="R1" value="V4" checked>Ê¡ÄÚÂşÓÎ <input type="radio" name="R1" value="V5">¹úÄÚÂşÓÎ 
-      <input type="radio" name="R1" value="V6">¹ú¼ÊÂşÓÎ</p>
-      <p>Í¨»°¼¶±ğ£º<input type="radio" value="V1" checked name="R2">±¾µØÍ¨»° 
-      <input type="radio" name="R2" value="V2">¹úÄÚ³¤Í¾ <input type="radio" name="R2" value="V3">¹ú¼Ê³¤Í¾</p>
-      <p>¿Í»§ID£º<input type="text" name="T2" size="20" value="11100011" readonly></p>
-      
-      <p><input type="submit" value="Íê³É>>" name="B1"><input type="reset" value="È«²¿ÖØĞ´" name="B2"></p>
-    </form>
-
-    
-    </TD>
-    </TR>
-  </TBODY></TABLE>
+   
+		<rapid:block name="frame-content">
+		<!-- å†…å®¹ä¸»ä½“åŒºåŸŸ,ä¸åŒçš„é¡µé¢è¦åˆ†åˆ«è¿›è¡Œä¸åŒçš„ç¼–å†™ -->
+		</rapid:block>
+						
 <BR></CENTER></BODY></HTML>
+

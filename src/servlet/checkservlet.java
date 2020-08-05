@@ -51,7 +51,7 @@ public void doPost(HttpServletRequest req, HttpServletResponse resp) throws Serv
 		}else{
 			if(password.equals(t.getOperatorPwd())){
 				HttpSession session = req.getSession();
-				session.setAttribute("operatorName", t.getOperatorName());
+				session.setAttribute("username", t.getOperatorName());
 				session.setAttribute("isadmin", t.getIdAdmin());
 				 String ifj=req.getParameter("ifj");
 				   String time=req.getParameter("time");
