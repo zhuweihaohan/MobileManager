@@ -37,6 +37,13 @@ public class OperatorDao {
 		
 	}
 
+	public void insert(toperator op) {
+		String sql="insert into toperator(operator_id,operator_name,operator_pwd,is_admin)"
+				+ "value(?,?,?,?)";
+		DBTools.execute(sql, op.getOperatorId(),op.getOperatorName(),op.getOperatorPwd(),op.getIdAdmin());
+		
+	}
+
 
 
 	

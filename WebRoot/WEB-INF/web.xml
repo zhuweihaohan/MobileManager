@@ -28,6 +28,13 @@
     <servlet-name>addOperatorservlet</servlet-name>
     <servlet-class>servlet.addOperatorservlet</servlet-class>
   </servlet>
+  <servlet>
+    <description>This is the description of my J2EE component</description>
+    <display-name>This is the display name of my J2EE component</display-name>
+    <servlet-name>checkopNameservlet</servlet-name>
+    <servlet-class>servlet.checkopNameservlet</servlet-class>
+  </servlet>
+
 
 
   <servlet-mapping>
@@ -38,6 +45,10 @@
     <servlet-name>addOperatorservlet</servlet-name>
     <url-pattern>/addOperator</url-pattern>
   </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>checkopNameservlet</servlet-name>
+    <url-pattern>/checkopName</url-pattern>
+  </servlet-mapping>
  <filter>
 <filter-name>login</filter-name>
 <filter-class>filter.LoginFitler</filter-class>
@@ -45,6 +56,10 @@
 <filter-mapping>
 <filter-name>login</filter-name>
 <url-pattern>/main.jsp</url-pattern>
+</filter-mapping>
+<filter-mapping>
+<filter-name>login</filter-name>
+<url-pattern>/newOperator.jsp</url-pattern>
 </filter-mapping>
 
   

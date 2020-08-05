@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import dao.OperatorDao;
 import vo.toperator;
 
-public class addOperatorservlet extends HttpServlet {
+public class checkopNameservlet extends HttpServlet {
 
 	
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -20,18 +20,22 @@ doPost(request, response);
 
 	
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-String operatorId=request.getParameter("T1");
-String operatorName=request.getParameter("T2");
-String operatorPwd=request.getParameter("T3");
-String isadmin=request.getParameter("R1");
-toperator op=new toperator();
-op.setIdAdmin(isadmin);
-op.setOperatorId(operatorId);
-op.setOperatorName(operatorName);
-op.setOperatorPwd(operatorPwd);
-OperatorDao dao=new OperatorDao();
-dao.insert(op);
-request.getRequestDispatcher("finish.jsp").forward(request, response);
+		response.setContentType("text/html");
+		PrintWriter out = response.getWriter();
+		OperatorDao dao = new OperatorDao();
+		toperator t=new toperator();
+		
+		String opname=(String)request.getParameter("opname");
+		
+	t.setOperatorId(opname);
+	t = (toperator) dao.selectById(t);
+	
+	if(t==null){
+		out.print("true");
+		
+	}else{
+		out.print("false");
+	}
 	}
 
 }

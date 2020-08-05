@@ -1,6 +1,7 @@
 package servlet;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 
 import javax.security.auth.message.callback.PrivateKeyCallback.Request;
 import javax.servlet.ServletException;
@@ -20,16 +21,22 @@ public class checkservlet extends HttpServlet {
 	
 	
 	public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-doPost(request, response);
+
+
+		doPost(request, response);
 	
 	}
 
 	
 public void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
+	OperatorDao dao = new OperatorDao();
+	toperator t=new toperator();
 	//获取请求参数
 	String username = req.getParameter("username");
 	String password = req.getParameter("password");
+	
+	
 	//判断输入的参数是否为空
 	if(username==null||username.trim().equals("")||password==null||password.trim().equals("")){
 		
@@ -39,8 +46,6 @@ public void doPost(HttpServletRequest req, HttpServletResponse resp) throws Serv
 		return ;
 	}else{
 		
-		OperatorDao dao = new OperatorDao();
-		toperator t=new toperator();
 		t.setOperatorId(username);
 		t = (toperator) dao.selectById(t);
 		if(t==null){
