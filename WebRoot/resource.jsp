@@ -39,7 +39,7 @@ t2.attr("value","");
     <form method="POST" action="resourse">
     <p>号码类型：<input type="Radio" name="R1" name="MType" value="SIM" checked>SIM &nbsp;&nbsp;<input type="Radio" name="R1" name="MType" value="UIM">UIM</p>
     <p>指定号段：从<input type="text" id="T1" name="T1" size="20" value="13910000000">到<input type="text" name="T2" id="T2" size="20" value="13910000009"><input type="submit" value="提交" name="B1"><input type="reset" value="全部重写" name="B2"></p>
-    <span id="error"></span>
+    <font color="red">${exist}</font>
     </form>
     <hr>
     

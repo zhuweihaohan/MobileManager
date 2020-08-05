@@ -19,27 +19,30 @@ doPost(request, response);
 	}
 
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-String operator=request.getParameter("operator");
-if(operator.equals("checkn")){
-	String num=request.getParameter("num");
-	System.out.println(num);
+
 	OperatorDao dao=new OperatorDao();
-	boolean flag=dao.selectMobileByNum(num);
-	PrintWriter out=response.getWriter();
-	if(flag)
-		out.print("yes");
-	else{out.print("no");}
-}
-else{
+	
+
+
 		
 		
 		String mobileNumber1=request.getParameter("T1");
 
 String mobileNumber2=request.getParameter("T2");
 String mobileType=request.getParameter("R1");
-Mobile m=new Mobile();
-OperatorDao dao=new OperatorDao();
-	dao.createMobile(mobileNumber1,mobileNumber2,mobileType);	
+int f=1;
+for(long i=Long.parseLong(mobileNumber1);i<=Long.parseLong(mobileNumber2);i++){
+boolean flag=dao.selectMobileByNum(mobileNumber1);
+if(flag){
+	request.setAttribute("exist", "这组号码中已有存在");
+	request.getRequestDispatcher("resource.jsp").forward(request, response);
+	f=0;
+	break;
+}}
+if(f==1)
+	{dao.createMobile(mobileNumber1,mobileNumber2,mobileType);
+	request.setAttribute("finish", "资源管理操作完成");
+	request.getRequestDispatcher("finish.jsp").forward(request, response);
+	}	}
 	}
-	}
-}
+
