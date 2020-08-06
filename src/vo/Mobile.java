@@ -5,6 +5,13 @@ private String mobileNumber;
 private String mobileType;
 private String cardNumber;
 private String idAvailable;
+public Mobile(){}
+public Mobile(String mobileNumber,String mobileType,String cardNumber,String idAvailable){
+this.setCardNumber(cardNumber);
+this.setIdAvailable(idAvailable);
+this.setMobileNumber(mobileNumber);
+this.setMobileType(mobileType);
+}
 public String getMobileNumber() {
 	return mobileNumber;
 }

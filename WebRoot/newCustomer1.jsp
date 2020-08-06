@@ -15,12 +15,12 @@
           <TD><IMG height=2 src="images\blank(1).gif" width=574></TD></TR></TBODY></TABLE></TD></TR>
   <TR vAlign=top>
     <TD height="600" bgColor=#f1f3f9>
-    <form method="POST" action="newUser.htm">
-      <p>证件类型：居民身份证</p>
-      <p>证件号码：3323224123341</p>
+    <form method="POST" action="user?operator=add2">
+      <p >证件类型：${type}<input type="hidden" name="itype"  value="${type}" readonly="readonly"></p>
+      <p>证件号码：${id}<input type="hidden" name="id"  value="${id}" readonly="readonly"></p>
       <p>姓名：<input type="text" name="T1" size="20" value="Tom"></p>
       <p>性别：<input type="radio" value="V1" checked name="R1">男&nbsp;&nbsp; <input type="radio" name="R1" value="V2">女</p>
-      <p>生日：<input type="text" name="T3" size="20" value="1965/1/1"></p>
+      <p>生日：${id.substring(6,10)}/${id.substring(10,12)}/${id.substring(12,14)}<input type="hidden" name="bir"  value="${id.substring(6,10)}/${id.substring(10,12)}/${id.substring(12,14)}" readonly="readonly"></p>
       <p>联系地址：<input type="text" name="T4" size="20" value="akjs askfa asjkfsa"></p>
       <p>　</p>
       <p><input type="submit" value="下一步>>" name="B1"><input type="reset" value="全部重写" name="B2"></p>

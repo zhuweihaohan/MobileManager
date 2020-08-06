@@ -7,9 +7,10 @@ import vo.User;
 
 public class UserDao implements BaseDao<User>{
 
-	@Override
 	public void insert(User t) {
-		// TODO Auto-generated method stub
+		String sql="insert into tuser(customer_id,account_id,mobile_number,roaming_status,com_level) values("
+				+ "?,?,?,?,?)";
+		DBTools.execute(sql,t.getCustomerId(),t.getAccountId(),t.getMobileNumber(),t.getRoamingStatus(),t.getComLevel());
 		
 	}
 
@@ -39,7 +40,7 @@ public class UserDao implements BaseDao<User>{
 			Object[] obj = objs.get(0);
 			int userId = Integer.parseInt((String)obj[0]);
 			int customerId = Integer.parseInt((String)obj[1]);
-			int accountId = Integer.parseInt((String)obj[2]);
+			String accountId = (String)obj[2];
 			String mobileNumber=(String )obj[3];
 			String roamingStatus=(String )obj[4];
 			String comLevel=(String )obj[5];

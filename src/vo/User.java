@@ -3,11 +3,19 @@ package vo;
 public class User {
 private int userId;
 private int customerId;
-private int accountId;
+private String accountId;
 private String mobileNumber;
 private String roamingStatus;
 private String comLevel;
-public User(int userId,int customerId,int accountId,String mobileNumber,String roamingStatus,String comLevel){
+public User(int customerId,String accountId,String mobileNumber,String roamingStatus,String comLevel){
+this.setAccountId(accountId);
+this.setComLevel(comLevel);
+this.setCustomerId(customerId);
+this.setMobileNumber(mobileNumber);
+this.setRoamingStatus(roamingStatus);	
+	
+}
+public User(int userId,int customerId,String accountId,String mobileNumber,String roamingStatus,String comLevel){
 this.setAccountId(accountId);
 this.setComLevel(comLevel);
 this.setCustomerId(customerId);
@@ -30,10 +38,11 @@ public int getCustomerId() {
 public void setCustomerId(int customerId) {
 	this.customerId = customerId;
 }
-public int getAccountId() {
+
+public String getAccountId() {
 	return accountId;
 }
-public void setAccountId(int accountId) {
+public void setAccountId(String accountId) {
 	this.accountId = accountId;
 }
 public String getMobileNumber() {

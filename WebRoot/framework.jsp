@@ -104,17 +104,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
             class=nav 
             href="newCustomer.jsp">开户</A></TD>
         </TR>
-        <TR>
-          <TD bgColor=#ffffff colSpan=2><IMG height=1 
-            src="images/blank.gif" width=1 border=0></TD></TR>
-        <TR>
-          <TD width=11 bgColor=#2650a6><IMG height=1 
-            src="images/blank.gif" width=1 border=0><img src="images/Arrow1.gif" width="23" height="23"></TD>
-          <TD width=165 height="29" bgColor=#7691c7>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<A 
-            class=nav 
-            href="newUser.jsp">录入用户信息</A></TD>
-        </TR>
-       
+        
         
         <TR>
           <TD bgColor=#ffffff colSpan=2><IMG height=1 
