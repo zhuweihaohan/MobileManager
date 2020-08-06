@@ -35,11 +35,11 @@ request.getRequestDispatcher("finish.jsp").forward(request, response);
 }
 else if(operator.equals("open"))
 { 
-	String c1=request.getParameter("C1");
-String c2=request.getParameter("manyou");
-String c3=request.getParameter("yajin");
-String c4=request.getParameter("C4");
-String c5=request.getParameter("C5");
+	String c1=request.getParameter("c1");
+String c2=request.getParameter("c2");
+String c3=request.getParameter("c3");
+String c4=request.getParameter("c4");
+String c5=request.getParameter("c5");
 System.out.println(c1);
 System.out.println(c2);
 System.out.println(c3);
@@ -47,41 +47,44 @@ System.out.println(c4);
 System.out.println(c5);
 chargeDao dao=new chargeDao();
 dao.delete();
-if(c1.equals("ON"))
+
+if(c1!=null&&c1.equals("ON"))
 { chargeRule rule=new chargeRule();
 rule.setFuncId("O");
 rule.setChargeCode("A");
 rule.setFuncName("开户费");
 dao.insert(rule);
 	}
-if(c2==null|c2.equals("ON"))
+if(c2!=null&&c2.equals("ON"))
 { chargeRule rule=new chargeRule();
 rule.setFuncId("O");
 rule.setChargeCode("B");
 rule.setFuncName("漫游费");
 dao.insert(rule);
 	}
-if(c3==null|c3.equals("ON"))
+if(c3!=null&&c3.equals("ON"))
 { chargeRule rule=new chargeRule();
 rule.setFuncId("O");
 rule.setChargeCode("C");
 rule.setFuncName("押金");
 dao.insert(rule);
 	}
-if(c4.equals("ON"))
+if(c4!=null&&c4.equals("ON"))
 { chargeRule rule=new chargeRule();
 rule.setFuncId("O");
 rule.setChargeCode("D");
 rule.setFuncName("入网费");
 dao.insert(rule);
 	}
-if(c5.equals("ON"))
+if(c5!=null&&c5.equals("ON"))
 { chargeRule rule=new chargeRule();
 rule.setFuncId("O");
 rule.setChargeCode("E");
 rule.setFuncName("选号费");
 dao.insert(rule);
 	}
+request.setAttribute("finish", "设置业务收费完成");
+request.getRequestDispatcher("finish.jsp").forward(request, response);
 }
 		
 	}

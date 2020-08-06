@@ -105,7 +105,36 @@
 <filter-name>login</filter-name>
 <url-pattern>/newOperator.jsp</url-pattern>
 </filter-mapping>
-
+<filter-mapping>
+<filter-name>login</filter-name>
+<url-pattern>/newCustomer.jsp</url-pattern>
+</filter-mapping>
+  <filter-mapping>
+<filter-name>login</filter-name>
+<url-pattern>/newCustomer1.jsp</url-pattern>
+</filter-mapping>
+<filter-mapping>
+<filter-name>login</filter-name>
+<url-pattern>/newC.jsp</url-pattern>
+</filter-mapping>
+  <filter-mapping>
+<filter-name>login</filter-name>
+<url-pattern>/newUser.jsp</url-pattern>
+</filter-mapping>
+<filter-mapping>
+<filter-name>login</filter-name>
+<url-pattern>/resourse.jsp</url-pattern>
+</filter-mapping>
+  <filter-mapping>
+<filter-name>login</filter-name>
+<url-pattern>/tt.jsp</url-pattern>
+</filter-mapping>
+  <filter-mapping>
+<filter-name>login</filter-name>
+<url-pattern>/updateOperator.jsp</url-pattern>
+</filter-mapping>
+  
+  
   
 
 
